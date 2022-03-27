@@ -55,7 +55,6 @@ it('lets user2 buy a star, if it is put up for sale', async() => {
     await instance.putStarUpForSale(starId, starPrice, {from: user1});
     await instance.approve(user2, starId, {from: user1});
 
-    let balanceOfUser1BeforeTransaction = await web3.eth.getBalance(user2);
     await instance.buyStar(starId, {from: user2, value: balance});
     assert.equal(await instance.ownerOf.call(starId), user2);
 });
