@@ -22,7 +22,7 @@ const App = {
       const accounts = await web3.eth.getAccounts();
       this.account = accounts[0];
     } catch (error) {
-      console.error("Could not connect to contract or chain.");
+      console.error(error);
     }
   },
 
